@@ -54,11 +54,11 @@ describe("About Mutability", function() {
     aPerson.lastname = "Andrews";
     aPerson.fullName = "Penny Andrews";
 
-    expect(aPerson.getFirstName()).toBe("John");
+    expect(aPerson.getFirstName()).toBe("John"); // function inherited from the constructor.
     expect(aPerson.getLastName()).toBe("Smith");
     expect(aPerson.getFullName()).toBe("John Smith");
 
-    aPerson.getFullName = function () {
+    aPerson.getFullName = function () { // function within the aPerson, and not within the constructor.
       return aPerson.lastname + ", " + aPerson.firstname;
     };
 
